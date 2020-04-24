@@ -102,40 +102,43 @@ class _HomePageState extends State<HomePage> {
             bottom: !_showMenu ? 0 + MediaQuery.of(context).padding.bottom : 0,
             left: 0,
             right: 0,
-            height: _screenHeight * 0.13,
-            child: AnimatedOpacity(
-              duration: Duration(milliseconds: 100),
-              opacity: !_showMenu ? 1: 0,
-              child: Container(
-                child: ListView(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    ItemMenuBottom(
-                      icon: Icons.person_add,
-                      text: "Indicar amigos",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.phone_android,
-                      text: "Recarregar telefone",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.chat,
-                      text: "Chat",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.monetization_on,
-                      text: "Depositar",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.move_to_inbox,
-                      text: "Transferir",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.lock_outline,
-                      text: "Bloquear Cartão",
-                    ),
-                  ],
+            height: _screenHeight * 0.14,
+            child: IgnorePointer(
+              ignoring: _showMenu,
+              child: AnimatedOpacity(
+                duration: Duration(milliseconds: 100),
+                opacity: !_showMenu ? 1 : 0,
+                child: Container(
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      ItemMenuBottom(
+                        icon: Icons.person_add,
+                        text: "Indicar amigos",
+                      ),
+                      ItemMenuBottom(
+                        icon: Icons.phone_android,
+                        text: "Recarregar telefone",
+                      ),
+                      ItemMenuBottom(
+                        icon: Icons.chat,
+                        text: "Chat",
+                      ),
+                      ItemMenuBottom(
+                        icon: Icons.monetization_on,
+                        text: "Depositar",
+                      ),
+                      ItemMenuBottom(
+                        icon: Icons.move_to_inbox,
+                        text: "Transferir",
+                      ),
+                      ItemMenuBottom(
+                        icon: Icons.lock_outline,
+                        text: "Bloquear Cartão",
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
