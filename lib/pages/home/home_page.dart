@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubankapp/pages/home/widges/menu_app.dart';
 import 'package:nubankapp/pages/home/widges/my_app_bar.dart';
 import 'package:nubankapp/pages/home/widges/my_dots_app.dart';
 import 'package:nubankapp/pages/home/widges/page_view_app.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double _screenHeight = MediaQuery.of(context).size.height;
     if (_yPosition == null) {
-      _yPosition = _screenHeight * .24;
+      _yPosition = _screenHeight * .20;
     }
     return Scaffold(
       backgroundColor: Colors.purple[800],
@@ -37,9 +38,13 @@ class _HomePageState extends State<HomePage> {
               setState(() {
                 _showMenu = !_showMenu;
                 _yPosition =
-                    _showMenu ? _screenHeight * .75 : _screenHeight * .24;
+                    _showMenu ? _screenHeight * .85 : _screenHeight * .20;
               });
             },
+          ),
+          MenuApp(
+            top: _screenHeight * .20,
+            showMenu: _showMenu,
           ),
           PageViewApp(
             showMenu: _showMenu,
@@ -50,8 +55,8 @@ class _HomePageState extends State<HomePage> {
               });
             },
             onPanUpdate: (details) {
-              double positionBottomLimit = _screenHeight * .75;
-              double positionTopLimit = _screenHeight * .24;
+              double positionBottomLimit = _screenHeight * .85;
+              double positionTopLimit = _screenHeight * .20;
               double midlePosition = positionBottomLimit - positionTopLimit;
 
               setState(() {
@@ -86,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          MyDotsApp(top: _screenHeight * 0.70, currentIndex: _currentIndex)
+          MyDotsApp(top: _screenHeight * 0.70, currentIndex: _currentIndex, showMenu: _showMenu,)
         ],
       ),
     );
