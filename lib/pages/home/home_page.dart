@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubankapp/pages/home/widges/item_menu_bottom.dart';
 import 'package:nubankapp/pages/home/widges/menu_app.dart';
 import 'package:nubankapp/pages/home/widges/my_app_bar.dart';
 import 'package:nubankapp/pages/home/widges/my_dots_app.dart';
@@ -91,7 +92,54 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          MyDotsApp(top: _screenHeight * 0.70, currentIndex: _currentIndex, showMenu: _showMenu,)
+          MyDotsApp(
+            top: _screenHeight * 0.70,
+            currentIndex: _currentIndex,
+            showMenu: _showMenu,
+          ),
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 100),
+            bottom: !_showMenu ? 0 + MediaQuery.of(context).padding.bottom : 0,
+            left: 0,
+            right: 0,
+            height: _screenHeight * 0.13,
+            child: AnimatedOpacity(
+              duration: Duration(milliseconds: 100),
+              opacity: !_showMenu ? 1: 0,
+              child: Container(
+                child: ListView(
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    ItemMenuBottom(
+                      icon: Icons.person_add,
+                      text: "Indicar amigos",
+                    ),
+                    ItemMenuBottom(
+                      icon: Icons.phone_android,
+                      text: "Recarregar telefone",
+                    ),
+                    ItemMenuBottom(
+                      icon: Icons.chat,
+                      text: "Chat",
+                    ),
+                    ItemMenuBottom(
+                      icon: Icons.monetization_on,
+                      text: "Depositar",
+                    ),
+                    ItemMenuBottom(
+                      icon: Icons.move_to_inbox,
+                      text: "Transferir",
+                    ),
+                    ItemMenuBottom(
+                      icon: Icons.lock_outline,
+                      text: "Bloquear Cartão",
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
