@@ -2,8 +2,13 @@
 
 Learn Flutter
 
-![alt text](https://https://github.com/Pedrobertucci/bankapp/tree/master/prints/splash.png)
-
+<p align="center">
+  <img src="https://github.com/Pedrobertucci/bankapp/blob/master/prints/splash.png" width="175" alt="Splash Screen">
+    <img src="https://github.com/Pedrobertucci/bankapp/blob/master/prints/home_card_1.png" width="175" alt="Home">
+    <img src="https://github.com/Pedrobertucci/bankapp/blob/master/prints/home_card_2.png" width="175" alt="Revanue">
+    <img src="https://github.com/Pedrobertucci/bankapp/blob/master/prints/home_card_3.png" width="175" alt="Rewards">
+    <img src="https://github.com/Pedrobertucci/bankapp/blob/master/prints/menu.png" width="175" alt="Details">
+</p>
 
 
 ## Getting Started
