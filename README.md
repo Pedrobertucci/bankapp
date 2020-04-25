@@ -1,6 +1,10 @@
-# nubankapp
+# Nubank App
 
-Laern Flutter
+Learn Flutter
+
+![alt text](https://https://github.com/Pedrobertucci/bankapp/tree/master/prints/splash.png)
+
+
 
 ## Getting Started
 
