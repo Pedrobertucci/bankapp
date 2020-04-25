@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nubankapp/pages/home/widges/bottom_menu.dart';
-import 'package:nubankapp/pages/home/widges/item_menu_bottom.dart';
-import 'package:nubankapp/pages/home/widges/menu_app.dart';
-import 'package:nubankapp/pages/home/widges/my_app_bar.dart';
-import 'package:nubankapp/pages/home/widges/my_dots_app.dart';
-import 'package:nubankapp/pages/home/widges/page_view_app.dart';
-
+import 'package:nubankapp/pages/home/widges/bottom_menu/bottom_menu.dart';
+import 'package:nubankapp/pages/home/widges/menu/menu_app.dart';
+import 'package:nubankapp/pages/home/widges/page_view/my_app_bar.dart';
+import 'package:nubankapp/pages/home/widges/page_view/my_dots_app.dart';
+import 'package:nubankapp/pages/home/widges/page_view/page_view_app.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -49,6 +47,11 @@ class _HomePageState extends State<HomePage> {
             showMenu: _showMenu,
           ),
           BottomMenu(showMenu: _showMenu),
+          MyDotsApp(
+            top: _screenHeight * 0.70,
+            currentIndex: _currentIndex,
+            showMenu: _showMenu,
+          ),
           PageViewApp(
             showMenu: _showMenu,
             top: _yPosition,
@@ -93,11 +96,6 @@ class _HomePageState extends State<HomePage> {
                 }
               });
             },
-          ),
-          MyDotsApp(
-            top: _screenHeight * 0.70,
-            currentIndex: _currentIndex,
-            showMenu: _showMenu,
           ),
         ],
       ),

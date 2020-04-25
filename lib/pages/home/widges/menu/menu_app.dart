@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nubankapp/pages/home/widges/item_menu.dart';
+import 'package:nubankapp/pages/home/widges/menu/item_menu.dart';
 
 class MenuApp extends StatelessWidget {
   final double top;
@@ -18,7 +18,7 @@ class MenuApp extends StatelessWidget {
         duration: Duration(milliseconds: 100),
         child: Container(
           color: Colors.purple[800],
-          height: MediaQuery.of(context).size.height * 0.55,
+          height: MediaQuery.of(context).size.height * 0.60,
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
@@ -93,8 +93,8 @@ class MenuApp extends StatelessWidget {
                           highlightElevation: 0,
                           hoverElevation: 0,
                           splashColor: Colors.purple[900],
-                          child: Text("Logout", style: TextStyle(fontSize: 12)),
-                          onLongPress: () {},
+                          child: Text("Logout App", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                          onLongPress: () {}, onPressed: () {},
                         ),
                       ),
                     ],

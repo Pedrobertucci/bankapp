@@ -15,6 +15,7 @@ class FirstCard extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(20),
@@ -72,14 +73,15 @@ class FirstCard extends StatelessWidget {
                                       ]),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
-                                    color: Colors.grey,
+                                    color: Colors.black,
                                     fontSize: 12,
                                   ),
                                 )
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(height: MediaQuery.of(context).size.height * 0.1,)
                       ],
                     ),
                   ),
@@ -125,7 +127,7 @@ class FirstCard extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text("compra mais recebem em Super Mercado no valor de € 19.82 Sexta",
-                          style: TextStyle(color: Colors.grey, fontSize: 13)),
+                          style: TextStyle(color: Colors.black, fontSize: 13)),
                     ),
                     Icon(Icons.chevron_right, color: Colors.grey[400], size: 18),
                   ],
